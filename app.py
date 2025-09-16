@@ -5,6 +5,9 @@ import streamlit as st
 import pandas as pd
 from sentence_transformers import SentenceTransformer, util
 import torch
+import os
+
+port = int(os.environ.get("PORT", 8501))
 
 # =========================================
 # 🔹 Caching Models & Data for Performance
@@ -119,4 +122,5 @@ if st.button("Get Recommendations", type="primary"):
             
 # --- Disclaimer ---
 st.markdown("---")
+
 st.warning("**Disclaimer:** This is an AI-powered informational tool and not a substitute for professional medical advice. Please consult a qualified healthcare provider for any health concerns.", icon="⚠️")
